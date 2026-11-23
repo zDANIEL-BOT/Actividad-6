@@ -65,6 +65,8 @@ namespace Actividad_6.Migrations
                     b.ToTable("configuracion_servidores");
                 });
 
+<<<<<<< HEAD
+=======
             modelBuilder.Entity("Actividad_6.Models.EventoServidor", b =>
                 {
                     b.Property<int>("IdEvento")
@@ -111,6 +113,7 @@ namespace Actividad_6.Migrations
                     b.ToTable("evento_servidores");
                 });
 
+>>>>>>> upstream/main
             modelBuilder.Entity("Actividad_6.Models.Juego", b =>
                 {
                     b.Property<int>("IdJuego")
@@ -145,6 +148,8 @@ namespace Actividad_6.Migrations
                     b.ToTable("juegos");
                 });
 
+<<<<<<< HEAD
+=======
             modelBuilder.Entity("Actividad_6.Models.PuertoServidor", b =>
                 {
                     b.Property<int>("IdPuerto")
@@ -177,6 +182,7 @@ namespace Actividad_6.Migrations
                     b.ToTable("puertos_servidores");
                 });
 
+>>>>>>> upstream/main
             modelBuilder.Entity("Actividad_6.Models.Servidor", b =>
                 {
                     b.Property<int>("IdServidor")
@@ -236,6 +242,8 @@ namespace Actividad_6.Migrations
                     b.ToTable("servidores");
                 });
 
+<<<<<<< HEAD
+=======
             modelBuilder.Entity("Actividad_6.Models.Usuario", b =>
                 {
                     b.Property<int>("IdUsuario")
@@ -282,6 +290,7 @@ namespace Actividad_6.Migrations
                     b.ToTable("usuarios");
                 });
 
+>>>>>>> upstream/main
             modelBuilder.Entity("Actividad_6.Models.VersionJuego", b =>
                 {
                     b.Property<int>("IdVersion")
@@ -329,6 +338,8 @@ namespace Actividad_6.Migrations
                     b.Navigation("Servidor");
                 });
 
+<<<<<<< HEAD
+=======
             modelBuilder.Entity("Actividad_6.Models.EventoServidor", b =>
                 {
                     b.HasOne("Actividad_6.Models.Servidor", "Servidor")
@@ -359,6 +370,7 @@ namespace Actividad_6.Migrations
                     b.Navigation("Servidor");
                 });
 
+>>>>>>> upstream/main
             modelBuilder.Entity("Actividad_6.Models.Servidor", b =>
                 {
                     b.HasOne("Actividad_6.Models.VersionJuego", "VersionJuego")
@@ -380,11 +392,14 @@ namespace Actividad_6.Migrations
 
                     b.Navigation("Juego");
                 });
+<<<<<<< HEAD
+=======
 
             modelBuilder.Entity("Actividad_6.Models.Usuario", b =>
                 {
                     b.Navigation("Eventos");
                 });
+>>>>>>> upstream/main
 #pragma warning restore 612, 618
         }
     }

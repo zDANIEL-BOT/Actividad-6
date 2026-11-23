@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+
+
+# Archivos de Visual Studio
+.vs/
+appsettings.json
+appsettings.Development.json
+=======
 bin/
 obj/
 
+>>>>>>> upstream/main

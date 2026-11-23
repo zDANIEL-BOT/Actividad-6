@@ -14,6 +14,13 @@ Proyecto de Hosting de Servidores del juego 'Terraria'.
 - PostgreSQL
 - Scalar
 
+<<<<<<< HEAD
+## Reparto de métodos de inicio de sesión
+
+- Carlos Abraham Viza Huarachi: Discord y Google
+- Adolfo Kevin Cruz Merma: Twitch y Microsoft
+- Carlos Daniel Miranda Almazan: DropBox y Spotify
+=======
 ## Integrantes del equipo
 
 | Integrante                    | Rol        | Proveedor fácil | Proveedor medio |
@@ -69,3 +76,4 @@ Ningún integrante debe ser agregado como colaborador del repositorio original.
 - Las Pull Requests deben ser revisadas antes de integrarse.
 - El autor de una Pull Request no puede aprobar su propia propuesta.
 - Para la etapa final de PUT y Soft Delete se utilizará Squash and merge.
+>>>>>>> upstream/main

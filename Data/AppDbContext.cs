@@ -5,15 +5,21 @@ namespace Actividad_6.Data;
 
 public class AppDbContext : DbContext
 {
+<<<<<<< HEAD
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+=======
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
     }
+>>>>>>> upstream/main
 
     public DbSet<Juego> Juegos { get; set; }
     public DbSet<VersionJuego> VersionJuegos { get; set; }
     public DbSet<Servidor> Servidores { get; set; }
     public DbSet<ConfiguracionServidor> ConfiguracionServidores { get; set; }
+<<<<<<< HEAD
+=======
 
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<EventoServidor> EventosServidores { get; set; }
@@ -38,4 +44,5 @@ public class AppDbContext : DbContext
             .WithMany()
             .HasForeignKey(p => p.IdServidor);
     }
+>>>>>>> upstream/main
 }
