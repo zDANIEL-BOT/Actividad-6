@@ -75,4 +75,6 @@ public class EventosServidoresController : ControllerBase
 
         return NoContent();
     }
+
+    //No contiene un método DELETE.
 }

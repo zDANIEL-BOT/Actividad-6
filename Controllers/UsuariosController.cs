@@ -105,6 +105,7 @@ public class UsuariosController : ControllerBase
         return NoContent();
     }
 
+    //DELETE
     [HttpDelete("{id}")]
     public async Task<IActionResult> Eliminar(int id)
     {
