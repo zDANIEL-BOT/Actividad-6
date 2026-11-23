@@ -52,4 +52,40 @@ public class PuertosServidoresController : ControllerBase
             new { id = puerto.IdPuerto },
             puerto);
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Actualizar(int id, PuertoServidor puerto)
+    {
+        if (id != puerto.IdPuerto)
+            return BadRequest(new { mensaje = "Los identificadores no coinciden" });
+
+        var puertoExistente = await _context.PuertosServidores.FindAsync(id);
+
+        if (puertoExistente == null)
+            return NotFound(new { mensaje = "Puerto no encontrado" });
+
+        puertoExistente.IdServidor = puerto.IdServidor;
+        puertoExistente.PuertoHost = puerto.PuertoHost;
+        puertoExistente.PuertoContenedor = puerto.PuertoContenedor;
+        puertoExistente.Activo = puerto.Activo;
+
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Eliminar(int id)
+    {
+        var puerto = await _context.PuertosServidores.FindAsync(id);
+
+        if (puerto == null)
+            return NotFound(new { mensaje = "Puerto no encontrado" });
+
+        puerto.Activo = false;
+
+        await _context.SaveChangesAsync();
+
+        return Ok(new { mensaje = "Puerto desactivado correctamente" });
+    }
 }

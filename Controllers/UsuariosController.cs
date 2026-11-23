@@ -79,4 +79,43 @@ public class UsuariosController : ControllerBase
                 usuario.FechaCreacion
             });
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Actualizar(int id, Usuario usuario)
+    {
+        if (id != usuario.IdUsuario)
+            return BadRequest(new { mensaje = "Los identificadores no coinciden" });
+
+        var usuarioExistente = await _context.Usuarios.FindAsync(id);
+
+        if (usuarioExistente == null)
+            return NotFound(new { mensaje = "Usuario no encontrado" });
+
+        usuarioExistente.IdRol = usuario.IdRol;
+        usuarioExistente.NombreUsuario = usuario.NombreUsuario;
+        usuarioExistente.Correo = usuario.Correo;
+        usuarioExistente.Estado = usuario.Estado;
+
+        if (!string.IsNullOrWhiteSpace(usuario.ContrasenaHash))
+            usuarioExistente.ContrasenaHash = usuario.ContrasenaHash;
+
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Eliminar(int id)
+    {
+        var usuario = await _context.Usuarios.FindAsync(id);
+
+        if (usuario == null)
+            return NotFound(new { mensaje = "Usuario no encontrado" });
+
+        usuario.Estado = "inactivo";
+
+        await _context.SaveChangesAsync();
+
+        return Ok(new { mensaje = "Usuario desactivado correctamente" });
+    }
 }

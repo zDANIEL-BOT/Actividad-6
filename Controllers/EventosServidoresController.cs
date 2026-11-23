@@ -51,4 +51,27 @@ public class EventosServidoresController : ControllerBase
             new { id = evento.IdEvento },
             evento);
     }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Actualizar(int id, EventoServidor evento)
+    {
+        if (id != evento.IdEvento)
+            return BadRequest(new { mensaje = "Los identificadores no coinciden" });
+
+        var eventoExistente = await _context.EventosServidores.FindAsync(id);
+
+        if (eventoExistente == null)
+            return NotFound(new { mensaje = "Evento no encontrado" });
+
+        eventoExistente.IdServidor = evento.IdServidor;
+        eventoExistente.IdUsuario = evento.IdUsuario;
+        eventoExistente.TipoEvento = evento.TipoEvento;
+        eventoExistente.Resultado = evento.Resultado;
+        eventoExistente.Detalles = evento.Detalles;
+        eventoExistente.Fecha = evento.Fecha;
+
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
 }
