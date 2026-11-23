@@ -80,6 +80,7 @@ public class UsuariosController : ControllerBase
             });
     }
 
+    //PUT
     [HttpPut("{id}")]
     public async Task<IActionResult> Actualizar(int id, Usuario usuario)
     {

@@ -53,6 +53,7 @@ public class PuertosServidoresController : ControllerBase
             puerto);
     }
 
+    //PUT
     [HttpPut("{id}")]
     public async Task<IActionResult> Actualizar(int id, PuertoServidor puerto)
     {

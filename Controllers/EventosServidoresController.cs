@@ -52,6 +52,7 @@ public class EventosServidoresController : ControllerBase
             evento);
     }
 
+    //PUT
     [HttpPut("{id}")]
     public async Task<IActionResult> Actualizar(int id, EventoServidor evento)
     {
